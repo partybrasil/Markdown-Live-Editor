@@ -1,0 +1,369 @@
+/* ===================================
+   Markdown Live Editor - Themes
+   Version: 0.1.0
+   21 Professional Themes
+   =================================== */
+
+/* Theme 1: Light (Default) - Already defined in main.css */
+
+/* Theme 2: Dark */
+html.theme-dark {
+    --color-background: #1e1e1e;
+    --color-surface: #2d2d30;
+    --color-surface-hover: #3e3e42;
+    --color-border: #3e3e42;
+    --color-text: #d4d4d4;
+    --color-text-secondary: #9d9d9d;
+    --color-text-muted: #6e6e6e;
+    --color-editor-bg: #1e1e1e;
+    --color-editor-text: #d4d4d4;
+    --color-preview-bg: #1e1e1e;
+    --color-preview-text: #d4d4d4;
+}
+
+/* Theme 3: Solarized Light */
+html.theme-solarized-light {
+    --color-primary: #268bd2;
+    --color-primary-dark: #2075b7;
+    --color-background: #fdf6e3;
+    --color-surface: #eee8d5;
+    --color-surface-hover: #e4ddc9;
+    --color-border: #d3cbb7;
+    --color-text: #657b83;
+    --color-text-secondary: #839496;
+    --color-text-muted: #93a1a1;
+    --color-editor-bg: #fdf6e3;
+    --color-editor-text: #657b83;
+    --color-preview-bg: #fdf6e3;
+    --color-preview-text: #657b83;
+}
+
+/* Theme 4: Solarized Dark */
+html.theme-solarized-dark {
+    --color-primary: #268bd2;
+    --color-primary-dark: #2075b7;
+    --color-background: #002b36;
+    --color-surface: #073642;
+    --color-surface-hover: #094454;
+    --color-border: #0d5566;
+    --color-text: #839496;
+    --color-text-secondary: #93a1a1;
+    --color-text-muted: #657b83;
+    --color-editor-bg: #002b36;
+    --color-editor-text: #839496;
+    --color-preview-bg: #002b36;
+    --color-preview-text: #839496;
+}
+
+/* Theme 5: Nord */
+html.theme-nord {
+    --color-primary: #88c0d0;
+    --color-primary-dark: #6fa8ba;
+    --color-background: #2e3440;
+    --color-surface: #3b4252;
+    --color-surface-hover: #434c5e;
+    --color-border: #4c566a;
+    --color-text: #eceff4;
+    --color-text-secondary: #d8dee9;
+    --color-text-muted: #a3be8c;
+    --color-editor-bg: #2e3440;
+    --color-editor-text: #eceff4;
+    --color-preview-bg: #2e3440;
+    --color-preview-text: #eceff4;
+}
+
+/* Theme 6: Dracula */
+html.theme-dracula {
+    --color-primary: #bd93f9;
+    --color-primary-dark: #9d7bd4;
+    --color-background: #282a36;
+    --color-surface: #44475a;
+    --color-surface-hover: #565869;
+    --color-border: #6272a4;
+    --color-text: #f8f8f2;
+    --color-text-secondary: #d0d0ca;
+    --color-text-muted: #8b8b83;
+    --color-editor-bg: #282a36;
+    --color-editor-text: #f8f8f2;
+    --color-preview-bg: #282a36;
+    --color-preview-text: #f8f8f2;
+}
+
+/* Theme 7: One Dark */
+html.theme-one-dark {
+    --color-primary: #61afef;
+    --color-primary-dark: #4a9dd9;
+    --color-background: #282c34;
+    --color-surface: #21252b;
+    --color-surface-hover: #2c313a;
+    --color-border: #3e4451;
+    --color-text: #abb2bf;
+    --color-text-secondary: #5c6370;
+    --color-text-muted: #4b5263;
+    --color-editor-bg: #282c34;
+    --color-editor-text: #abb2bf;
+    --color-preview-bg: #282c34;
+    --color-preview-text: #abb2bf;
+}
+
+/* Theme 8: Atom One Light */
+html.theme-atom-light {
+    --color-primary: #4078f2;
+    --color-primary-dark: #3465d6;
+    --color-background: #fafafa;
+    --color-surface: #f0f0f0;
+    --color-surface-hover: #e5e5e5;
+    --color-border: #e0e0e0;
+    --color-text: #383a42;
+    --color-text-secondary: #696c77;
+    --color-text-muted: #a0a1a7;
+    --color-editor-bg: #fafafa;
+    --color-editor-text: #383a42;
+    --color-preview-bg: #fafafa;
+    --color-preview-text: #383a42;
+}
+
+/* Theme 9: Monokai */
+html.theme-monokai {
+    --color-primary: #66d9ef;
+    --color-primary-dark: #4dc4d8;
+    --color-background: #272822;
+    --color-surface: #3e3d32;
+    --color-surface-hover: #49483e;
+    --color-border: #5a594e;
+    --color-text: #f8f8f2;
+    --color-text-secondary: #d0d0ca;
+    --color-text-muted: #8b8b83;
+    --color-editor-bg: #272822;
+    --color-editor-text: #f8f8f2;
+    --color-preview-bg: #272822;
+    --color-preview-text: #f8f8f2;
+}
+
+/* Theme 10: Gruvbox Light */
+html.theme-gruvbox-light {
+    --color-primary: #458588;
+    --color-primary-dark: #3c7079;
+    --color-background: #fbf1c7;
+    --color-surface: #ebdbb2;
+    --color-surface-hover: #d5c4a1;
+    --color-border: #bdae93;
+    --color-text: #3c3836;
+    --color-text-secondary: #504945;
+    --color-text-muted: #7c6f64;
+    --color-editor-bg: #fbf1c7;
+    --color-editor-text: #3c3836;
+    --color-preview-bg: #fbf1c7;
+    --color-preview-text: #3c3836;
+}
+
+/* Theme 11: Gruvbox Dark */
+html.theme-gruvbox-dark {
+    --color-primary: #83a598;
+    --color-primary-dark: #6d8d82;
+    --color-background: #282828;
+    --color-surface: #3c3836;
+    --color-surface-hover: #504945;
+    --color-border: #665c54;
+    --color-text: #ebdbb2;
+    --color-text-secondary: #d5c4a1;
+    --color-text-muted: #bdae93;
+    --color-editor-bg: #282828;
+    --color-editor-text: #ebdbb2;
+    --color-preview-bg: #282828;
+    --color-preview-text: #ebdbb2;
+}
+
+/* Theme 12: Ocean */
+html.theme-ocean {
+    --color-primary: #1abc9c;
+    --color-primary-dark: #16a085;
+    --color-background: #0c2233;
+    --color-surface: #143d59;
+    --color-surface-hover: #1e5273;
+    --color-border: #2a6f8f;
+    --color-text: #e8f4f8;
+    --color-text-secondary: #a8c5d4;
+    --color-text-muted: #7a98a9;
+    --color-editor-bg: #0c2233;
+    --color-editor-text: #e8f4f8;
+    --color-preview-bg: #0c2233;
+    --color-preview-text: #e8f4f8;
+}
+
+/* Theme 13: Forest */
+html.theme-forest {
+    --color-primary: #4caf50;
+    --color-primary-dark: #388e3c;
+    --color-background: #1b2a1f;
+    --color-surface: #2c4a32;
+    --color-surface-hover: #3d6140;
+    --color-border: #4d7a4f;
+    --color-text: #d8e8d5;
+    --color-text-secondary: #a8c5a3;
+    --color-text-muted: #7a9876;
+    --color-editor-bg: #1b2a1f;
+    --color-editor-text: #d8e8d5;
+    --color-preview-bg: #1b2a1f;
+    --color-preview-text: #d8e8d5;
+}
+
+/* Theme 14: Sunset */
+html.theme-sunset {
+    --color-primary: #ff6b6b;
+    --color-primary-dark: #ee5a52;
+    --color-background: #2c1810;
+    --color-surface: #4a2615;
+    --color-surface-hover: #5e3320;
+    --color-border: #7a4630;
+    --color-text: #f8e8d8;
+    --color-text-secondary: #d8c5a8;
+    --color-text-muted: #a8987a;
+    --color-editor-bg: #2c1810;
+    --color-editor-text: #f8e8d8;
+    --color-preview-bg: #2c1810;
+    --color-preview-text: #f8e8d8;
+}
+
+/* Theme 15: Cyberpunk */
+html.theme-cyberpunk {
+    --color-primary: #ff00ff;
+    --color-primary-dark: #cc00cc;
+    --color-background: #0d0221;
+    --color-surface: #240046;
+    --color-surface-hover: #3c096c;
+    --color-border: #5a189a;
+    --color-text: #00ff9f;
+    --color-text-secondary: #00d9ff;
+    --color-text-muted: #7b2cbf;
+    --color-editor-bg: #0d0221;
+    --color-editor-text: #00ff9f;
+    --color-preview-bg: #0d0221;
+    --color-preview-text: #00ff9f;
+}
+
+/* Theme 16: Minimal */
+html.theme-minimal {
+    --color-primary: #000000;
+    --color-primary-dark: #1a1a1a;
+    --color-background: #ffffff;
+    --color-surface: #f5f5f5;
+    --color-surface-hover: #e8e8e8;
+    --color-border: #d0d0d0;
+    --color-text: #000000;
+    --color-text-secondary: #4a4a4a;
+    --color-text-muted: #8a8a8a;
+    --color-editor-bg: #ffffff;
+    --color-editor-text: #000000;
+    --color-preview-bg: #ffffff;
+    --color-preview-text: #000000;
+}
+
+/* Theme 17: Pastel */
+html.theme-pastel {
+    --color-primary: #a8d8ea;
+    --color-primary-dark: #88c0d8;
+    --color-background: #fff5f7;
+    --color-surface: #ffe5ec;
+    --color-surface-hover: #ffd6e0;
+    --color-border: #ffc2d4;
+    --color-text: #4a4a4a;
+    --color-text-secondary: #6a6a6a;
+    --color-text-muted: #9a9a9a;
+    --color-editor-bg: #fff5f7;
+    --color-editor-text: #4a4a4a;
+    --color-preview-bg: #fff5f7;
+    --color-preview-text: #4a4a4a;
+}
+
+/* Theme 18: High Contrast */
+html.theme-high-contrast {
+    --color-primary: #ffff00;
+    --color-primary-dark: #cccc00;
+    --color-background: #000000;
+    --color-surface: #1a1a1a;
+    --color-surface-hover: #2a2a2a;
+    --color-border: #ffffff;
+    --color-text: #ffffff;
+    --color-text-secondary: #ffffff;
+    --color-text-muted: #cccccc;
+    --color-editor-bg: #000000;
+    --color-editor-text: #ffffff;
+    --color-preview-bg: #000000;
+    --color-preview-text: #ffffff;
+}
+
+/* Theme 19: Terminal */
+html.theme-terminal {
+    --color-primary: #00ff00;
+    --color-primary-dark: #00cc00;
+    --color-background: #0c0c0c;
+    --color-surface: #1a1a1a;
+    --color-surface-hover: #2a2a2a;
+    --color-border: #00ff00;
+    --color-text: #00ff00;
+    --color-text-secondary: #00cc00;
+    --color-text-muted: #009900;
+    --color-editor-bg: #0c0c0c;
+    --color-editor-text: #00ff00;
+    --color-preview-bg: #0c0c0c;
+    --color-preview-text: #00ff00;
+    font-family: 'Courier New', monospace;
+}
+
+/* Theme 20: Twilight */
+html.theme-twilight {
+    --color-primary: #8b5cf6;
+    --color-primary-dark: #7c3aed;
+    --color-background: #1e1b2e;
+    --color-surface: #2d2a3e;
+    --color-surface-hover: #3d3a4e;
+    --color-border: #4d4a5e;
+    --color-text: #e5d9f2;
+    --color-text-secondary: #c5b9d2;
+    --color-text-muted: #a599b2;
+    --color-editor-bg: #1e1b2e;
+    --color-editor-text: #e5d9f2;
+    --color-preview-bg: #1e1b2e;
+    --color-preview-text: #e5d9f2;
+}
+
+/* Theme 21: GitHub */
+html.theme-github {
+    --color-primary: #0366d6;
+    --color-primary-dark: #0256ba;
+    --color-background: #ffffff;
+    --color-surface: #f6f8fa;
+    --color-surface-hover: #e1e4e8;
+    --color-border: #d1d5da;
+    --color-text: #24292e;
+    --color-text-secondary: #586069;
+    --color-text-muted: #959da5;
+    --color-editor-bg: #ffffff;
+    --color-editor-text: #24292e;
+    --color-preview-bg: #ffffff;
+    --color-preview-text: #24292e;
+}
+
+/* Text Color Classes */
+.text-color-black { --color-editor-text: #000000; --color-text: #000000; }
+.text-color-gray { --color-editor-text: #6c757d; --color-text: #6c757d; }
+.text-color-blue { --color-editor-text: #0066cc; --color-text: #0066cc; }
+.text-color-green { --color-editor-text: #28a745; --color-text: #28a745; }
+.text-color-red { --color-editor-text: #dc3545; --color-text: #dc3545; }
+
+/* Theme Transitions */
+html {
+    transition: background-color var(--transition-base), 
+                color var(--transition-base);
+}
+
+.toolbar,
+.panel-header,
+.app-footer,
+.editor-textarea,
+.preview-content {
+    transition: background-color var(--transition-base), 
+                color var(--transition-base),
+                border-color var(--transition-base);
+}
