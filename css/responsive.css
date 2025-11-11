@@ -92,6 +92,47 @@
         flex-direction: column;
         gap: var(--spacing-xs);
     }
+
+    /* Mobile collapsed panel adjustments */
+    .editor-panel.collapsed .panel-header {
+        position: relative;
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        width: 100%;
+        height: 40px;
+        min-height: 40px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--color-border);
+    }
+
+    .preview-panel.collapsed .panel-header {
+        position: relative;
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        width: 100%;
+        height: 40px;
+        min-height: 40px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--color-border);
+    }
+
+    .editor-panel.collapsed .panel-header__controls,
+    .preview-panel.collapsed .panel-header__controls {
+        flex-direction: row;
+    }
+
+    .editor-panel.collapsed,
+    .preview-panel.collapsed {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .editor-panel.expanded,
+    .preview-panel.expanded {
+        grid-row: 1 / -1;
+    }
 }
 
 /* Tablet Portrait (481px - 767px) */

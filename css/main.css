@@ -266,6 +266,12 @@ body {
     border-bottom: var(--border-width) solid var(--color-border);
 }
 
+.panel-header__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
 .panel-title {
     font-size: var(--font-size-base);
     font-weight: 600;
@@ -279,11 +285,16 @@ body {
     cursor: pointer;
     font-size: var(--font-size-lg);
     opacity: 0.6;
-    transition: opacity var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .panel-button:hover {
     opacity: 1;
+    transform: scale(1.1);
+}
+
+.panel-button:active {
+    transform: scale(0.95);
 }
 
 .save-indicator {
@@ -296,6 +307,84 @@ body {
 
 .save-indicator.visible {
     opacity: 1;
+}
+
+/* Collapsed Panel States */
+.editor-panel.collapsed {
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    overflow: visible;
+    transition: all var(--transition-base);
+    border-right: var(--border-width) solid var(--color-border);
+}
+
+.preview-panel.collapsed {
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    overflow: visible;
+    transition: all var(--transition-base);
+}
+
+.editor-panel.collapsed .editor-textarea,
+.preview-panel.collapsed .preview-content {
+    display: none;
+}
+
+/* Expanded Panel States */
+.editor-panel.expanded,
+.preview-panel.expanded {
+    grid-column: 1 / -1;
+    transition: all var(--transition-base);
+}
+
+/* Collapsed panel header stays visible but minimal */
+.editor-panel.collapsed .panel-header {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: var(--spacing-md) var(--spacing-xs);
+    width: 40px;
+    min-width: 40px;
+    flex-direction: row;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.preview-panel.collapsed .panel-header {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: var(--spacing-md) var(--spacing-xs);
+    width: 40px;
+    min-width: 40px;
+    flex-direction: row;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.editor-panel.collapsed .panel-title,
+.preview-panel.collapsed .panel-title {
+    font-size: var(--font-size-sm);
+}
+
+.editor-panel.collapsed .panel-header__controls,
+.preview-panel.collapsed .panel-header__controls {
+    writing-mode: horizontal-tb;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.editor-panel.collapsed .save-indicator {
+    display: none;
+}
+
+.editor-panel.collapsed .panel-header:hover,
+.preview-panel.collapsed .panel-header:hover {
+    background-color: var(--color-surface-hover);
 }
 
 /* Editor Textarea */

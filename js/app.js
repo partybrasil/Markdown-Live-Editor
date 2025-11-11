@@ -107,7 +107,10 @@ const App = {
         // 7. Initialize scroll sync
         Sync.init(Editor.getElement(), Preview.getElement());
 
-        // 8. Setup clear button
+        // 8. Initialize panel toggle
+        PanelToggle.init();
+
+        // 9. Setup clear button
         this.setupClearButton();
     },
 
