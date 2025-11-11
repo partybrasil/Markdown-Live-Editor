@@ -88,17 +88,14 @@ const PanelToggle = {
         
         if (this.editorCollapsed) {
             this.editorPanel.classList.add('collapsed');
-            this.editorPanel.classList.remove('expanded');
             this.previewPanel.classList.add('expanded');
-            this.previewPanel.classList.remove('collapsed');
-            this.editorToggleBtn.innerHTML = '▶';
+            this.editorToggleBtn.innerHTML = '▼';
             this.editorToggleBtn.title = 'Expandir editor';
             this.previewCollapsed = false; // Ensure preview is not collapsed
         } else {
             this.editorPanel.classList.remove('collapsed');
-            this.editorPanel.classList.remove('expanded');
             this.previewPanel.classList.remove('expanded');
-            this.editorToggleBtn.innerHTML = '◀';
+            this.editorToggleBtn.innerHTML = '▲';
             this.editorToggleBtn.title = 'Colapsar editor';
         }
 
@@ -135,17 +132,14 @@ const PanelToggle = {
         
         if (this.previewCollapsed) {
             this.previewPanel.classList.add('collapsed');
-            this.previewPanel.classList.remove('expanded');
             this.editorPanel.classList.add('expanded');
-            this.editorPanel.classList.remove('collapsed');
-            this.previewToggleBtn.innerHTML = '◀';
+            this.previewToggleBtn.innerHTML = '▲';
             this.previewToggleBtn.title = 'Expandir vista previa';
             this.editorCollapsed = false; // Ensure editor is not collapsed
         } else {
             this.previewPanel.classList.remove('collapsed');
-            this.previewPanel.classList.remove('expanded');
             this.editorPanel.classList.remove('expanded');
-            this.previewToggleBtn.innerHTML = '▶';
+            this.previewToggleBtn.innerHTML = '▼';
             this.previewToggleBtn.title = 'Colapsar vista previa';
         }
 
@@ -254,20 +248,20 @@ const PanelToggle = {
         if (this.editorCollapsed) {
             this.editorPanel.classList.add('collapsed');
             this.previewPanel.classList.add('expanded');
-            this.editorToggleBtn.innerHTML = '▶';
+            this.editorToggleBtn.innerHTML = '▼';
             this.editorToggleBtn.title = 'Expandir editor';
         } else {
-            this.editorToggleBtn.innerHTML = '◀';
+            this.editorToggleBtn.innerHTML = '▲';
             this.editorToggleBtn.title = 'Colapsar editor';
         }
 
         if (this.previewCollapsed) {
             this.previewPanel.classList.add('collapsed');
             this.editorPanel.classList.add('expanded');
-            this.previewToggleBtn.innerHTML = '◀';
+            this.previewToggleBtn.innerHTML = '▲';
             this.previewToggleBtn.title = 'Expandir vista previa';
         } else {
-            this.previewToggleBtn.innerHTML = '▶';
+            this.previewToggleBtn.innerHTML = '▼';
             this.previewToggleBtn.title = 'Colapsar vista previa';
         }
     },
