@@ -1,0 +1,348 @@
+/* ===================================
+   Markdown Live Editor - Responsive
+   Version: 0.1.0
+   Mobile-First Responsive Design
+   =================================== */
+
+/* Mobile First: Base styles in main.css are for mobile */
+
+/* Small Mobile Devices (320px - 480px) */
+@media screen and (max-width: 480px) {
+    :root {
+        --toolbar-height: auto;
+        --font-size-sm: 0.8rem;
+        --spacing-sm: 6px;
+        --spacing-md: 12px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        height: auto;
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .toolbar__section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .toolbar__section--center {
+        order: 3;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .toolbar__section--right {
+        order: 2;
+        justify-content: space-between;
+    }
+
+    .toolbar__title {
+        font-size: var(--font-size-base);
+    }
+
+    .toolbar__button {
+        min-width: 32px;
+        height: 32px;
+        padding: var(--spacing-xs);
+        font-size: 0.7rem;
+    }
+
+    .toolbar__select {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh 50vh;
+        height: calc(100vh - 150px); /* Approximate for variable toolbar */
+    }
+
+    .editor-panel,
+    .preview-panel {
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--color-border);
+    }
+
+    .preview-panel {
+        border-bottom: none;
+    }
+
+    .panel-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .panel-title {
+        font-size: var(--font-size-sm);
+    }
+
+    .editor-textarea,
+    .preview-content {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+
+    .footer-text {
+        font-size: 0.7rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}
+
+/* Tablet Portrait (481px - 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    :root {
+        --toolbar-height: 80px;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: var(--toolbar-height);
+    }
+
+    .toolbar__section--center {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh 50vh;
+        height: calc(100vh - var(--toolbar-height) - var(--footer-height));
+    }
+
+    .editor-panel {
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--color-border);
+    }
+}
+
+/* Tablet Landscape (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .toolbar__section--center {
+        gap: var(--spacing-xs);
+    }
+
+    .toolbar__button {
+        min-width: 34px;
+        height: 34px;
+        padding: var(--spacing-xs);
+    }
+
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop Small (1025px - 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop Large (1367px - 1920px) */
+@media screen and (min-width: 1367px) {
+    :root {
+        --font-size-base: 1.0625rem; /* 17px */
+        --spacing-md: 20px;
+        --spacing-lg: 28px;
+    }
+
+    .toolbar {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .editor-textarea,
+    .preview-content {
+        padding: var(--spacing-lg);
+    }
+
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Ultra Wide (1921px+) */
+@media screen and (min-width: 1921px) {
+    :root {
+        --font-size-base: 1.125rem; /* 18px */
+        --spacing-lg: 32px;
+        --spacing-xl: 48px;
+    }
+
+    .app-container {
+        max-width: 2400px;
+        margin: 0 auto;
+    }
+
+    .main-content {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+/* Landscape Orientation */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+    :root {
+        --toolbar-height: 50px;
+        --footer-height: 30px;
+        --spacing-sm: 6px;
+        --spacing-md: 10px;
+    }
+
+    .toolbar {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .toolbar__title {
+        font-size: var(--font-size-base);
+    }
+
+    .toolbar__button {
+        min-width: 32px;
+        height: 32px;
+    }
+
+    .panel-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .toolbar,
+    .app-footer,
+    .editor-panel {
+        display: none !important;
+    }
+
+    .main-content {
+        display: block;
+        height: auto;
+    }
+
+    .preview-panel {
+        border: none;
+    }
+
+    .panel-header {
+        display: none;
+    }
+
+    .preview-content {
+        padding: 0;
+        overflow: visible;
+    }
+
+    /* Ensure good print quality */
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    .preview-content a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    .preview-content a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+
+    /* Page breaks */
+    .preview-content h1,
+    .preview-content h2,
+    .preview-content h3 {
+        page-break-after: avoid;
+    }
+
+    .preview-content pre,
+    .preview-content blockquote {
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --color-border: currentColor;
+    }
+
+    .toolbar__button {
+        border-width: 2px;
+    }
+}
+
+/* Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+    html:not([class*="theme-"]) {
+        --color-background: #1e1e1e;
+        --color-surface: #2d2d30;
+        --color-surface-hover: #3e3e42;
+        --color-border: #3e3e42;
+        --color-text: #d4d4d4;
+        --color-text-secondary: #9d9d9d;
+        --color-text-muted: #6e6e6e;
+        --color-editor-bg: #1e1e1e;
+        --color-editor-text: #d4d4d4;
+        --color-preview-bg: #1e1e1e;
+        --color-preview-text: #d4d4d4;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .toolbar__button,
+    .panel-button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .toolbar__select {
+        min-height: 44px;
+    }
+}
+
+/* Focus Visible for Keyboard Navigation */
+@media (any-hover: hover) {
+    .toolbar__button:focus-visible,
+    .toolbar__select:focus-visible,
+    .panel-button:focus-visible {
+        outline: 3px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+}
+
+/* Container Queries Support (Future-proof) */
+@supports (container-type: inline-size) {
+    .toolbar {
+        container-type: inline-size;
+        container-name: toolbar;
+    }
+
+    @container toolbar (max-width: 600px) {
+        .toolbar__section--center {
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Editor Markdown en tiempo real con vista previa sincronizada">
+    <meta name="keywords" content="markdown, editor, preview, live, real-time">
+    <meta name="author" content="Markdown Live Editor">
+    <title>📝 Markdown Live Editor</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Libraries -->
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/purify.min.js"></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header / Toolbar -->
+        <header class="toolbar" role="banner">
+            <div class="toolbar__section toolbar__section--left">
+                <h1 class="toolbar__title">📝 Markdown Live Editor</h1>
+            </div>
+            
+            <div class="toolbar__section toolbar__section--center">
+                <!-- Formatting Buttons -->
+                <div class="toolbar__group" role="group" aria-label="Formato de texto">
+                    <button class="toolbar__button" data-format="bold" aria-label="Negrita" title="Ctrl+B">
+                        <strong>B</strong>
+                    </button>
+                    <button class="toolbar__button" data-format="italic" aria-label="Itálica" title="Ctrl+I">
+                        <em>I</em>
+                    </button>
+                    <button class="toolbar__button" data-format="code" aria-label="Código" title="Ctrl+`">
+                        &lt;/&gt;
+                    </button>
+                </div>
+                
+                <div class="toolbar__separator"></div>
+                
+                <!-- Heading Buttons -->
+                <div class="toolbar__group" role="group" aria-label="Encabezados">
+                    <button class="toolbar__button" data-format="h1" aria-label="Encabezado 1" title="Ctrl+1">
+                        H1
+                    </button>
+                    <button class="toolbar__button" data-format="h2" aria-label="Encabezado 2" title="Ctrl+2">
+                        H2
+                    </button>
+                    <button class="toolbar__button" data-format="h3" aria-label="Encabezado 3" title="Ctrl+3">
+                        H3
+                    </button>
+                </div>
+                
+                <div class="toolbar__separator"></div>
+                
+                <!-- List Buttons -->
+                <div class="toolbar__group" role="group" aria-label="Listas">
+                    <button class="toolbar__button" data-format="ul" aria-label="Lista sin ordenar" title="Ctrl+U">
+                        ☰
+                    </button>
+                    <button class="toolbar__button" data-format="ol" aria-label="Lista ordenada" title="Ctrl+O">
+                        1.
+                    </button>
+                </div>
+                
+                <div class="toolbar__separator"></div>
+                
+                <!-- Link and Image -->
+                <div class="toolbar__group" role="group" aria-label="Enlaces e imágenes">
+                    <button class="toolbar__button" data-format="link" aria-label="Insertar enlace" title="Ctrl+K">
+                        🔗
+                    </button>
+                    <button class="toolbar__button" data-format="image" aria-label="Insertar imagen" title="Ctrl+Shift+I">
+                        🖼️
+                    </button>
+                </div>
+                
+                <div class="toolbar__separator"></div>
+                
+                <!-- Quote and HR -->
+                <div class="toolbar__group" role="group" aria-label="Otros">
+                    <button class="toolbar__button" data-format="quote" aria-label="Cita" title="Ctrl+Q">
+                        "
+                    </button>
+                    <button class="toolbar__button" data-format="hr" aria-label="Separador" title="Ctrl+H">
+                        ─
+                    </button>
+                </div>
+            </div>
+            
+            <div class="toolbar__section toolbar__section--right">
+                <!-- Theme Selector -->
+                <select id="theme-selector" class="toolbar__select" aria-label="Selector de tema">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="solarized-light">Solarized Light</option>
+                    <option value="solarized-dark">Solarized Dark</option>
+                    <option value="nord">Nord</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="one-dark">One Dark</option>
+                    <option value="atom-light">Atom Light</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="gruvbox-light">Gruvbox Light</option>
+                    <option value="gruvbox-dark">Gruvbox Dark</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="forest">Forest</option>
+                    <option value="sunset">Sunset</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="terminal">Terminal</option>
+                    <option value="twilight">Twilight</option>
+                    <option value="github">GitHub</option>
+                </select>
+                
+                <!-- Text Color Cycle -->
+                <button id="color-cycle" class="toolbar__button" aria-label="Cambiar color de texto" title="Ciclar color">
+                    🎨
+                </button>
+                
+                <!-- Export Buttons -->
+                <button id="export-md" class="toolbar__button toolbar__button--primary" aria-label="Descargar Markdown" title="Descargar .md">
+                    ⬇️ MD
+                </button>
+                <button id="export-html" class="toolbar__button toolbar__button--primary" aria-label="Descargar HTML" title="Descargar .html">
+                    ⬇️ HTML
+                </button>
+                
+                <!-- Clear Button -->
+                <button id="clear-content" class="toolbar__button toolbar__button--danger" aria-label="Limpiar contenido" title="Limpiar todo">
+                    🗑️
+                </button>
+            </div>
+        </header>
+        
+        <!-- Main Content Area -->
+        <main class="main-content" role="main">
+            <!-- Editor Panel -->
+            <section class="editor-panel" aria-label="Editor de Markdown">
+                <div class="panel-header">
+                    <h2 class="panel-title">Editor</h2>
+                    <span id="save-indicator" class="save-indicator" aria-live="polite">Guardado</span>
+                </div>
+                <textarea 
+                    id="markdown-input" 
+                    class="editor-textarea"
+                    placeholder="# ¡Escribe tu Markdown aquí!
+
+Prueba con:
+- **Negrita** y *itálica*
+- [Enlaces](https://ejemplo.com)
+- Listas y código
+- ¡Y mucho más!
+
+Arrastra imágenes directamente aquí 🖼️"
+                    aria-label="Área de edición de Markdown"
+                    spellcheck="true"
+                ></textarea>
+            </section>
+            
+            <!-- Preview Panel -->
+            <section class="preview-panel" aria-label="Vista previa de Markdown">
+                <div class="panel-header">
+                    <h2 class="panel-title">Vista Previa</h2>
+                    <button id="sync-scroll-toggle" class="panel-button" aria-label="Alternar sincronización de scroll" title="Sincronizar scroll">
+                        🔄
+                    </button>
+                </div>
+                <div 
+                    id="markdown-preview" 
+                    class="preview-content"
+                    role="article"
+                    aria-live="polite"
+                    aria-atomic="false"
+                ></div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="app-footer" role="contentinfo">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span id="word-count">0 palabras</span> • 
+                    <span id="char-count">0 caracteres</span> •
+                    <a href="https://github.com/partybrasil/Markdown-Live-Editor" target="_blank" rel="noopener noreferrer">GitHub</a> •
+                    <a href="https://www.markdownguide.org/" target="_blank" rel="noopener noreferrer">Guía Markdown</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Drop Zone Overlay -->
+    <div id="drop-zone-overlay" class="drop-zone-overlay" aria-hidden="true">
+        <div class="drop-zone-content">
+            <p class="drop-zone-text">⬇️ Suelta la imagen aquí</p>
+        </div>
+    </div>
+    
+    <!-- JavaScript Modules -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/themes.js"></script>
+    <script src="js/toolbar.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/preview.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/imagehandler.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
