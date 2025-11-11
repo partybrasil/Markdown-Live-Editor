@@ -144,7 +144,12 @@
             <section class="editor-panel" aria-label="Editor de Markdown">
                 <div class="panel-header">
                     <h2 class="panel-title">Editor</h2>
-                    <span id="save-indicator" class="save-indicator" aria-live="polite">Guardado</span>
+                    <div class="panel-header__controls">
+                        <span id="save-indicator" class="save-indicator" aria-live="polite">Guardado</span>
+                        <button id="toggle-editor" class="panel-button" aria-label="Colapsar/Expandir editor" title="Colapsar editor">
+                            ◀
+                        </button>
+                    </div>
                 </div>
                 <textarea 
                     id="markdown-input" 
@@ -167,9 +172,14 @@ Arrastra imágenes directamente aquí 🖼️"
             <section class="preview-panel" aria-label="Vista previa de Markdown">
                 <div class="panel-header">
                     <h2 class="panel-title">Vista Previa</h2>
-                    <button id="sync-scroll-toggle" class="panel-button" aria-label="Alternar sincronización de scroll" title="Sincronizar scroll">
-                        🔄
-                    </button>
+                    <div class="panel-header__controls">
+                        <button id="sync-scroll-toggle" class="panel-button" aria-label="Alternar sincronización de scroll" title="Sincronizar scroll">
+                            🔄
+                        </button>
+                        <button id="toggle-preview" class="panel-button" aria-label="Colapsar/Expandir vista previa" title="Colapsar vista previa">
+                            ▶
+                        </button>
+                    </div>
                 </div>
                 <div 
                     id="markdown-preview" 
@@ -211,6 +221,7 @@ Arrastra imágenes directamente aquí 🖼️"
     <script src="js/export.js"></script>
     <script src="js/imagehandler.js"></script>
     <script src="js/sync.js"></script>
+    <script src="js/panelToggle.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
