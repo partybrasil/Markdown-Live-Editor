@@ -248,11 +248,13 @@ const Utils = {
                     // Details/Summary
                     'details', 'summary',
                     // Other semantic elements
-                    'figure', 'figcaption', 'article', 'section', 'aside', 'header', 'footer',
+                    'figure', 'figcaption', 'article', 'section', 'aside', 'header', 'footer', 'nav', 'main',
                     // Form elements (for task lists)
                     'input', 'label',
                     // Definition lists
-                    'dl', 'dt', 'dd'
+                    'dl', 'dt', 'dd',
+                    // Ruby annotation elements
+                    'ruby', 'rt', 'rp'
                 ],
                 ALLOWED_ATTR: [
                     // Global attributes
