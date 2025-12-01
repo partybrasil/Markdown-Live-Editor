@@ -33,6 +33,8 @@
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 32px;
+    /* Negative spacing for special layouts */
+    --spacing-lg-negative: -24px;
     
     /* Typography */
     --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -512,7 +514,7 @@ body {
 /* Task List Items */
 .preview-content .task-list-item {
     list-style-type: none;
-    margin-left: calc(-1 * var(--spacing-lg));
+    margin-left: var(--spacing-lg-negative);
     padding-left: var(--spacing-sm);
 }
 
