@@ -256,19 +256,21 @@ const Utils = {
                 ],
                 ALLOWED_ATTR: [
                     // Global attributes
-                    'id', 'class', 'title', 'lang',
+                    'id', 'class', 'title', 'lang', 'dir',
                     // Links
                     'href', 'target', 'rel',
                     // Images
                     'src', 'alt', 'width', 'height', 'loading',
                     // Tables
-                    'colspan', 'rowspan', 'scope',
+                    'colspan', 'rowspan', 'scope', 'headers',
                     // Form elements
                     'type', 'checked', 'disabled', 'readonly',
                     // Accessibility
                     'aria-label', 'aria-labelledby', 'aria-describedby', 'aria-hidden', 'role',
                     // Style (controlled by sanitizer)
-                    'style'
+                    'style',
+                    // Data attributes
+                    'data-*'
                 ]
             });
         }
