@@ -228,16 +228,48 @@ const Utils = {
         if (typeof DOMPurify !== 'undefined') {
             return DOMPurify.sanitize(html, {
                 ALLOWED_TAGS: [
+                    // Headings
                     'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-                    'p', 'br', 'hr',
-                    'strong', 'em', 'u', 's', 'code', 'pre',
+                    // Text structure
+                    'p', 'br', 'hr', 'div', 'span',
+                    // Text formatting
+                    'strong', 'b', 'em', 'i', 'u', 's', 'del', 'ins', 'mark',
+                    'sub', 'sup', 'small', 'abbr', 'cite', 'dfn', 'kbd', 'samp', 'var',
+                    // Code
+                    'code', 'pre',
+                    // Links and media
                     'a', 'img',
+                    // Lists
                     'ul', 'ol', 'li',
-                    'blockquote',
-                    'table', 'thead', 'tbody', 'tr', 'th', 'td',
-                    'div', 'span'
+                    // Quotes
+                    'blockquote', 'q',
+                    // Tables
+                    'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td', 'caption', 'colgroup', 'col',
+                    // Details/Summary
+                    'details', 'summary',
+                    // Other semantic elements
+                    'figure', 'figcaption', 'article', 'section', 'aside', 'header', 'footer',
+                    // Form elements (for task lists)
+                    'input', 'label',
+                    // Definition lists
+                    'dl', 'dt', 'dd'
                 ],
-                ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id']
+                ALLOWED_ATTR: [
+                    // Global attributes
+                    'id', 'class', 'title', 'lang',
+                    // Links
+                    'href', 'target', 'rel',
+                    // Images
+                    'src', 'alt', 'width', 'height', 'loading',
+                    // Tables
+                    'colspan', 'rowspan', 'scope',
+                    // Form elements
+                    'type', 'checked', 'disabled', 'readonly',
+                    // Accessibility
+                    'aria-label', 'aria-labelledby', 'aria-describedby', 'aria-hidden', 'role',
+                    // Style (controlled by sanitizer)
+                    'style'
+                ]
             });
         }
         return html;
